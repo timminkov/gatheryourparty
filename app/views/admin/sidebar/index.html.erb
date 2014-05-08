@@ -1,0 +1,32 @@
+<%- content_for :page_heading do %>
+  <i class="icon-large icon-sidebar"></i>
+  <h2 class="page-title"><%= t(".sidebar") %></h2>
+<%- end %>
+
+<p class='help-block'><%= t(".explain_how_its_works") %></p>
+
+<%= form_tag(url_for(:action=>'publish'), :method => :post, :class => 'spinner') do %>
+<div class='form-actions'>
+  <%= link_to(t(".cancel"), {action: 'index'}, class: 'btn') %>
+  <%= t(".or") %>
+  <%= submit_tag(t('.publish_changes'), class: 'btn btn-success') %>
+</div>
+<%- end -%>
+
+<div id="messages">&nbsp;</div>
+
+   <%= render partial: 'config' %>
+
+<%= form_tag(url_for(:action=>'publish'), :method => :post, :class => 'spinner') do %>
+    <div class='form-group'>
+      <%= link_to(t(".cancel"), {action: 'index'}, class: 'btn') %>
+      <%= t(".or") %>
+      <%= submit_tag(t('.publish_changes'), class: 'btn btn-success') %>
+    </div>
+
+  <% end %>
+
+    <div class='alert alert-info'>
+      <p><%= t(".download_more_plugins") %></p>  
+    </div>
+
